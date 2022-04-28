@@ -4,8 +4,8 @@ orbs:
 workflows:
   build:
     jobs:
-      - cypress/install
-      - cypress/run:
+      cypress/install
+      cypress/run:
           requires:
             - cypress/install
           record: false # record results on Cypress Dashboard
