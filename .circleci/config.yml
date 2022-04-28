@@ -13,6 +13,6 @@ workflows:
           parallelism: 4 # use 4 CircleCI machines to finish quickly
           group: 'all tests' # name this group "all tests" on the dashboard
   report:
-      steps:
+      jobs:
         - build-report
         - run: ./node_modules/.bin/cypress-slack-reporter-full
