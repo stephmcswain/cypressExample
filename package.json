@@ -1,0 +1,22 @@
+{
+  "name": "cypressexample",
+  "version": "1.0.0",
+  "description": "testing circleCI with cypress",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stephmcswain/cypressExample.git"
+  },
+  "author": "Stephanie McSwain",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stephmcswain/cypressExample/issues"
+  },
+  "homepage": "https://github.com/stephmcswain/cypressExample#readme",
+  "dependencies": {
+    "cypress": "^9.6.0"
+  }
+}
