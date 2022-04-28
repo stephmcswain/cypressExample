@@ -1,8 +1,8 @@
 version: 2.1
 orbs:
   cypress: cypress-io/cypress@1
-#workflows:
-#  build:
+workflows:
+  build:
     jobs:
       - cypress/install
       - cypress/run:
@@ -12,6 +12,7 @@ orbs:
           parallel: true # split all specs across machines
           parallelism: 4 # use 4 CircleCI machines to finish quickly
           group: 'all tests' # name this group "all tests" on the dashboard   
-      #report:
-        #steps:
-         # - ./node_modules/.bin/cypress-slack-reporter-full
+jobs:
+  report:
+    steps:
+      - ./node_modules/.bin/cypress-slack-reporter-full
