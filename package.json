@@ -20,6 +20,10 @@
     "cypress": "^9.6.0"
   },
   "devDependencies": {
-    "cypress-slack-reporter": "^1.5.0"
+    "cypress-multi-reporters": "^1.6.0",
+    "cypress-slack-reporter": "^1.5.0",
+    "mochawesome": "^7.1.3",
+    "mochawesome-merge": "^4.2.1",
+    "mochawesome-report-generator": "^6.2.0"
   }
 }
