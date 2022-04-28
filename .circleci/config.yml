@@ -14,5 +14,4 @@ workflows:
           group: 'all tests' # name this group "all tests" on the dashboard   
   report:
     jobs:
-      steps:
-        - run: ./node_modules/.bin/cypress-slack-reporter-full
+      run: ./node_modules/.bin/cypress-slack-reporter-full
