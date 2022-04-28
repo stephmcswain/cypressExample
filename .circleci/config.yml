@@ -1,3 +1,7 @@
+jobs:
+  report:
+      steps:
+        - run: ./node_modules/.bin/cypress-slack-reporter-full
 version: 2.1
 orbs:
   cypress: cypress-io/cypress@1
@@ -12,6 +16,4 @@ workflows:
           parallel: true # split all specs across machines
           parallelism: 4 # use 4 CircleCI machines to finish quickly
           group: 'all tests' # name this group "all tests" on the dashboard   
-  report:
-    jobs:
-      run: ./node_modules/.bin/cypress-slack-reporter-full
+      - report
