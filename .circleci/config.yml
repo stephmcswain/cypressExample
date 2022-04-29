@@ -3,6 +3,7 @@ orbs:
   cypress: cypress-io/cypress@1
 
 workflows: 
+  version: 2
   "Run tests, generate report, send to slack":
     jobs: 
       - cypress/install
@@ -20,11 +21,13 @@ workflows:
           record: false
           requires: 
             - cypress/install
-      - report
+      - report:
+          requires:
+            - cypress/run
 
 jobs:
   report:
     docker:
       - image: alpine:latest
-    steps:
+    steps: 
       - run: ./node_modules/.bin/cypress-slack-reporter-full
