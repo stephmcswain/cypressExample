@@ -1,5 +1,5 @@
 {
-    "reporter": "cypress-multi-reporters",
+    "reporter": "mochawesome",
     "projectId":"vnxnr8",
     "reporterOptions": {
       "configFile": "reporterOpts.json"
