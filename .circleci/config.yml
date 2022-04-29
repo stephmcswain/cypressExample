@@ -10,26 +10,26 @@ workflows:
       - 
         cypress/run: 
           context: Build
-          post-steps:
-            - when: always
-            - store_artifacts:
-                path: mochawesome-report
-            - run: ./node_modules/.bin/cypress-slack-reporter-full
+          #post-steps:
+          #  - when: always
+          #  - store_artifacts:
+          #      path: mochawesome-report
+          #  - run: ./node_modules/.bin/cypress-slack-reporter-full
           group: "all tests"
-          parallel: false
-          #parallelism: 4
-          record: false
+          parallel: true
+          parallelism: 4
+          record: true
           requires: 
             - cypress/install
       
-  "generate report and send to slack":
-    jobs:
-      - report
+  #"generate report and send to slack":
+   # jobs:
+   #   - report
 
 
-jobs:
-  report:
-    docker:
-      - image: alpine:latest
-    steps: 
-      - run: ./node_modules/.bin/cypress-slack-reporter-full
+#jobs:
+#  report:
+#    docker:
+#      - image: alpine:latest
+#    steps: 
+#      - run: ./node_modules/.bin/cypress-slack-reporter-full
