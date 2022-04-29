@@ -14,6 +14,6 @@ workflows:
           record: false
           requires: 
             - cypress/install
-      - report:
+        report:
           steps:
             - run: ./node_modules/.bin/cypress-slack-reporter-full
