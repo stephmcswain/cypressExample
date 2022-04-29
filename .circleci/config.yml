@@ -10,13 +10,14 @@ workflows:
         cypress/run: 
           context: Build
           post-steps:
+            - when: always
             - store_artifacts:
                 path: mochawesome-report
             - run: ./node_modules/.bin/cypress-slack-reporter-full
           group: "all tests"
-          parallel: false
+          parallel: true
           parallelism: 4
-          record: false
+          record: true
           requires: 
             - cypress/install
         
