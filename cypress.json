@@ -1,6 +1,6 @@
 {
     "reporter": "mochawesome",
-    "projectId":"vnxnr8",
+    "projectId":"q9hzbi",
     "reporterOptions": {
       "configFile": "reporterOpts.json"
     }
