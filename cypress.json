@@ -1,5 +1,6 @@
 {
     "reporter": "cypress-multi-reporters",
+    "projectId":"vnxnr8",
     "reporterOptions": {
       "configFile": "reporterOpts.json"
     }

@@ -15,9 +15,9 @@ workflows:
                 path: mochawesome-report
             - run: ./node_modules/.bin/cypress-slack-reporter-full
           group: "all tests"
-          parallel: true
+          parallel: false
           parallelism: 4
-          record: true
+          record: false
           requires: 
             - cypress/install
         
