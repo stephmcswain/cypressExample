@@ -22,7 +22,6 @@ workflows:
           requires: 
             - cypress/install
       - report:
-          when: always
           requires:
             - cypress/run
 
@@ -30,5 +29,6 @@ jobs:
   report:
     docker:
       - image: alpine:latest
+    when: always
     steps: 
       - run: ./node_modules/.bin/cypress-slack-reporter-full
