@@ -16,7 +16,7 @@ workflows:
             - run: ./node_modules/.bin/cypress-slack-reporter-full
           group: "all tests"
           parallel: false
-          parallelism: 4
+          #parallelism: 4
           record: false
           requires: 
             - cypress/install
