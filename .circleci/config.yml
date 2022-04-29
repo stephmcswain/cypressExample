@@ -8,7 +8,7 @@ workflows:
     jobs: 
       - cypress/install
       - 
-        cypress/run: 
+        cypress/run:  
           context: Build
           #post-steps:
           #  - when: always
