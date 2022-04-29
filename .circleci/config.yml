@@ -8,6 +8,7 @@ workflows:
       - cypress/install
       - 
         cypress/run: 
+          context: Build
           post-steps:
             - store_artifacts:
                 path: mochawesome-report
