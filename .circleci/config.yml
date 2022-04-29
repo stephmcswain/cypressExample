@@ -8,21 +8,14 @@ workflows:
       - cypress/install
       - 
         cypress/run: 
+          post-steps:
+            - store_artifacts:
+                path: mochawesome-report
+            - run: ./node_modules/.bin/cypress-slack-reporter-full
           group: "all tests"
           parallel: true
           parallelism: 4
           record: false
           requires: 
             - cypress/install
-      - report
-          
-jobs:
-  report:
-    docker:
-      - image: cypress/base:17.8.0
-        environment:
-          ## this enables colors in the output
-          TERM: xterm
-    steps:
-        - run: npm install
-        - run: ./node_modules/.bin/cypress-slack-reporter-full
+        
