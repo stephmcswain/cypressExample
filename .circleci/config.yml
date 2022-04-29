@@ -22,6 +22,7 @@ workflows:
           requires: 
             - cypress/install
       - report:
+          when: always
           requires:
             - cypress/run
 
